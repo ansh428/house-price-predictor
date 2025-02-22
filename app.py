@@ -106,3 +106,26 @@ if not history_df.empty:
     ax.set_ylabel("House Price ($)")
     ax.set_title("Trend of Predicted House Prices")
     st.pyplot(fig)
+
+# Display past predictions
+if not history_df.empty:
+    st.markdown("### 📈 Past Predictions")
+    st.dataframe(history_df.tail(10))  # Show last 10 predictions
+
+    # Add a "Reset Predictions" button
+    if st.button("🗑️ Reset Past Predictions"):
+        # Clear the predictions file
+        history_df = pd.DataFrame(columns=["Longitude", "Latitude", "Households", "Median Income", "Prediction"])
+        history_df.to_csv("predictions.csv", index=False)
+        st.warning("Past predictions have been reset!")
+        st.experimental_rerun()  # Refresh the app to reflect changes
+
+    # Plot predictions over time
+    st.markdown("### 📊 House Price Predictions Over Time")
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(history_df.index, history_df["Prediction"], marker="o", linestyle="-", color="blue")
+    ax.set_xlabel("Prediction Number")
+    ax.set_ylabel("House Price ($)")
+    ax.set_title("Trend of Predicted House Prices")
+    st.pyplot(fig)
+
