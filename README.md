@@ -2,7 +2,7 @@
 
 This is a Streamlit web application that predicts California house prices using a trained Gradient Boosting model. The app allows users to enter house features and get an estimated price instantly.
 
-🔗 **Live Demo**: [Click Here to Try the App]
+🔗 **Live Demo**: [[Click Here to Try the App](https://house-price-predictor-ndn5n2apptvxnuenksbhxgk.streamlit.app/)]
 
 ---
 
