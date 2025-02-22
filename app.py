@@ -75,12 +75,6 @@ if st.button("🔍 Predict House Price"):
     history_df = pd.concat([history_df, new_entry], ignore_index=True)
     history_df.to_csv("predictions.csv", index=False)
 
----
-
-## **2️⃣ 📊 Feature Importance Visualization**
-Below the prediction section, add this code to visualize **which features influence house prices most**:
-
-```python
 # Feature importance visualization
 st.markdown("### 📊 Feature Importance")
 st.markdown("Which factors impact house prices the most?")
