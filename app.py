@@ -98,3 +98,17 @@ feat_df = feat_df.sort_values(by="Importance", ascending=False)
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.barplot(x="Importance", y="Feature", data=feat_df, ax=ax)
 st.pyplot(fig)
+
+# Display past predictions
+if not history_df.empty:
+    st.markdown("### 📈 Past Predictions")
+    st.dataframe(history_df.tail(10))  # Show last 10 predictions
+
+    # Plot predictions over time
+    st.markdown("### 📊 House Price Predictions Over Time")
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(history_df.index, history_df["Prediction"], marker="o", linestyle="-", color="blue")
+    ax.set_xlabel("Prediction Number")
+    ax.set_ylabel("House Price ($)")
+    ax.set_title("Trend of Predicted House Prices")
+    st.pyplot(fig)
