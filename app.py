@@ -118,7 +118,7 @@ if not history_df.empty:
         history_df = pd.DataFrame(columns=["Longitude", "Latitude", "Households", "Median Income", "Prediction"])
         history_df.to_csv("predictions.csv", index=False)
         st.warning("Past predictions have been reset!")
-        st.experimental_rerun()  # Refresh the app to reflect changes
+        st.rerun() # Refresh the app to reflect changes
 
     # Plot predictions over time
     st.markdown("### 📊 House Price Predictions Over Time")
