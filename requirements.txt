@@ -5,5 +5,3 @@ pandas
 matplotlib
 seaborn
 scikit-learn
-folium
-streamlit-folium
